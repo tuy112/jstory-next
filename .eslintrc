@@ -1,0 +1,10 @@
+{
+    "extends": ["next/core-web-vitals", "eslint:recommended", "plugin:@typescript-eslint/recommended", "prettier"],
+    "plugins": ["simple-import-sort"],
+    "rules": {
+      "react/jsx-key": "warn",
+      "@typescript-eslint/no-unused-vars": ["warn", { "argsIgnorePattern": "^_", "varsIgnorePattern": "^_" }],
+      "simple-import-sort/imports": "warn",
+      "simple-import-sort/exports": "warn"
+    }
+  }
