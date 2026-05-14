@@ -1,0 +1,60 @@
+.footer {
+    width: 100%;
+    background: #666;
+    text-align: center;
+    margin-top: auto;
+}
+
+.footer .inner {
+    padding: 30px 0;
+}
+
+.footer h3 { 
+    color: #fff; 
+    font-size: 23px; 
+    font-weight: 700; 
+    margin-bottom: 10px; 
+}
+
+.links { 
+    display: flex; 
+    justify-content: center;
+    margin-bottom: 10px;
+    padding: 0;
+}
+
+.links li { 
+    margin: 0 15px;
+}
+
+.links li img { 
+    width: 20px; 
+    height: 20px;
+    margin-right: 5px;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+.links li a {
+    font-size: 14px;
+    color: #fff;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.footer .links li a:hover {
+    color: #ddd;
+}
+
+.links li a em {
+    cursor: pointer;
+}
+
+.footer .always p { 
+    font-weight: 300; 
+    font-size: 13px; 
+    font-style: italic; 
+    letter-spacing: -0.3px;
+    color: #fff;
+}

@@ -1,29 +1,20 @@
 import type { Metadata } from "next";
 
-import Header from "@/components/common/header";
-import Footer from "@/components/common/footer";
+import "./src/styles/globals.css";
 
 export const metadata: Metadata = {
-  title: "Jstory",
-  description: "Jstory Next.js App",
+    title: "Jstory",
+    description: "Jstory Next.js App",
 };
 
 export default function RootLayout({
-  children,
+    children,
 }: Readonly<{
-  children: React.ReactNode;
+    children: React.ReactNode;
 }>) {
-  return (
-    <html lang="ko">
-      <body>
-        <p id="skipNav" className="hide">
-            <a href="/">본문 바로가기</a>
-        </p>
-
-        <Header />
-        {children}
-        <Footer />
-      </body>
-    </html>
-  );
+    return (
+        <html lang="ko">
+            <body>{children}</body>
+        </html>
+    );
 }

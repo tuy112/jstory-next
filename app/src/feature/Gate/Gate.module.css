@@ -1,0 +1,59 @@
+.gatePage {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+.gateHeader {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.gateLogo {
+  width: 250px;
+  height: 250px;
+  pointer-events: none;
+  animation: App-logo-spin infinite 20s linear;
+}
+
+.gateText {
+  margin-top: 20px;
+  color: #ffffff;
+  font-size: 24px;
+  text-shadow: 2px 2px 6px
+      rgba(0, 0, 0, 0.3);
+}
+
+.gateLink {
+  margin-top: 30px;
+  padding: 14px 30px;
+  color: #ffffff;
+  font-size: 22px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+  backdrop-filter: blur(8px);
+}
+
+.gateLink:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 25px
+      rgba(0, 0, 0, 0.2);
+}
+
+@keyframes App-logo-spin {
+  from {
+      transform: rotate(0deg);
+  }
+
+  to {
+      transform: rotate(360deg);
+  }
+}

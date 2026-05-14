@@ -1,0 +1,122 @@
+/* select-wrap */
+.main-wrap {
+    text-align: center;
+    padding: 60px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.main-wrap h2 {
+    font-size: 25px;
+    font-weight: 700;
+    color: #fff;
+    text-shadow: 3px 3px 6px rgba(0,0,0,0.4);
+    animation: titleWave 2s ease-in-out infinite;
+    background: linear-gradient(45deg, #fff, #3498db);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 20px;
+}
+
+.main-intro {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 40px;
+    padding: 0 20px;
+}
+
+.main-detail {
+    flex: 1 1 30%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 40px;
+    background: rgba(255,255,255,0.15);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+.detail3 {
+    flex: 1 1 80%;
+}
+
+.main-detail h3 {
+    font-size: 32px;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.main-detail p {
+    color: #fff;
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.main-detail:hover {
+    transform: translateY(-10px);
+    background: rgba(255,255,255,0.25);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.main-detail .cta-button {
+    display: inline-block;
+    color: #fff;
+    font-size: 20px;
+    padding: 15px 30px;
+    margin-top: auto;
+    border: 2px solid rgba(255,255,255,0.3);
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    background: rgba(255,255,255,0.1);
+}
+
+.main-detail .cta-button:hover {
+    transform: scale(1.05);
+    background: rgba(52,152,219,0.3);
+    border-color: #3498db;
+    text-shadow: 0 0 15px rgba(52,152,219,0.7);
+}
+
+
+
+/* 반응형 공간 */
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -60%) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes titleWave {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}

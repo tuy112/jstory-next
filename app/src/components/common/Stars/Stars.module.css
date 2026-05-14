@@ -1,0 +1,29 @@
+/* 밤하늘의 별을... */
+.stars {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    background: transparent;
+    pointer-events: none;
+}
+
+.stars div {
+    position: absolute;
+    background: #e9ecef;
+    border-radius: 50%;
+    width: 2px;
+    height: 2px;
+    animation: twinkle 2s infinite ease-in-out;
+}
+
+@keyframes twinkle {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
