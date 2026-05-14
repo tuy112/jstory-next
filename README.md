@@ -1,36 +1,113 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 📘 Jstory Project
 
-## Getting Started
+**AS-IS GitHub Repository**  
+🔗 https://github.com/tuy112/Jstory
+🔗 https://github.com/tuy112/jstory-transformation-front
 
-First, run the development server:
+**AS-IS 배포 페이지**
+🔗 https://tuy112.github.io
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+**TOBE 배포 페이지**
+🔗 (현재 미 배포 상태)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+최신 업데이트 날짜: 
+최신 릴리즈 버전: 
+예정 출시 버전: 
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Jstory 디렉토리 구조
+src
+ ┣ app
+ ┃ ┣ gate
+ ┃ ┃ ┗ page.tsx
+ ┃ ┣ login
+ ┃ ┃ ┗ page.tsx
+ ┃ ┣ signup
+ ┃ ┃ ┗ page.tsx
+ ┃ ┣ profile
+ ┃ ┃ ┗ page.tsx
+ ┃ ┣ project
+ ┃ ┃ ┗ page.tsx
+ ┃ ┣ history
+ ┃ ┃ ┗ page.tsx
+ ┃ ┣ mountain
+ ┃ ┃ ┗ page.tsx
+ ┃ ┣ todo
+ ┃ ┃ ┗ page.tsx
+ ┃ ┣ layout.tsx
+ ┃ ┣ page.tsx
+ ┃ ┗ globals.css
+ ┣ components
+ ┃ ┣ common
+ ┃ ┃ ┣ Header
+ ┃ ┃ ┃ ┣ Header.tsx
+ ┃ ┃ ┃ ┗ Header.module.css
+ ┃ ┃ ┣ Footer
+ ┃ ┃ ┃ ┣ Footer.tsx
+ ┃ ┃ ┃ ┗ Footer.module.css
+ ┃ ┃ ┗ Modal
+ ┃ ┃ ┃ ┣ TilModal.tsx
+ ┃ ┃ ┃ ┗ TilModal.module.css
+ ┃ ┣ mountain
+ ┃ ┃ ┣ MapComponent.tsx
+ ┃ ┃ ┣ MapComponent.module.css
+ ┃ ┃ ┣ MountainModal.tsx
+ ┃ ┃ ┗ MountainModal.module.css
+ ┃ ┗ three
+ ┃ ┃ ┣ Character.tsx
+ ┃ ┃ ┣ Ground.tsx
+ ┃ ┃ ┗ Player.tsx
+ ┣ features
+ ┃ ┣ gate
+ ┃ ┃ ┣ Gate.tsx
+ ┃ ┃ ┗ Gate.module.css
+ ┃ ┣ home
+ ┃ ┃ ┣ Home.tsx
+ ┃ ┃ ┗ Home.module.css
+ ┃ ┣ login
+ ┃ ┃ ┣ Login.tsx
+ ┃ ┃ ┗ Login.module.css
+ ┃ ┣ signup
+ ┃ ┃ ┣ Signup.tsx
+ ┃ ┃ ┗ Signup.module.css
+ ┃ ┣ todo
+ ┃ ┃ ┣ Todo.tsx
+ ┃ ┃ ┗ Todo.module.css
+ ┃ ┗ mountain
+ ┃ ┃ ┣ Mountain.tsx
+ ┃ ┃ ┗ Mountain.module.css
+ ┣ styles
+ ┃ ┣ tokens.css
+ ┃ ┣ reset.css
+ ┃ ┗ utilities.css
+ ┣ lib
+ ┃ ┗ api.ts
+ ┣ constants
+ ┃ ┗ routes.ts
+ ┗ types
 
-## Learn More
+### 디렉토리 세부 설명
+app        → URL 페이지 담당
+features   → 실제 화면 컴포넌트
+components → 공통/재사용 컴포넌트
+styles     → 전역 CSS, 변수, reset, utility
+public     → 이미지
 
-To learn more about Next.js, take a look at the following resources:
+### css 구성
+globals.css     → reset.css + tokens.css + utilities.css import만 담당
+tokens.css      → 색상, 폰트, z-index, shadow, radius 등 공통 변수
+reset.css       → 태그 초기화
+utilities.css   → hide, line, goTop 같은 공통 유틸
+*.module.css    → Header, Footer, Gate 등 컴포넌트별 스타일
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Tools
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+![js](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=JavaScript&logoColor=white)
+![react](	https://img.shields.io/badge/CSS-239120?&style=for-the-badge&logo=css3&logoColor=white)
+![css](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
+![spring](https://img.shields.io/badge/Spring-6DB33F?style=for-the-badge&logo=spring&logoColor=white)
+![mysql](https://img.shields.io/badge/MySQL-00000F?style=for-the-badge&logo=mysql&logoColor=white)
