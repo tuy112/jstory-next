@@ -17,75 +17,45 @@
 ---
 
 ## Jstory 디렉토리 구조
-src
- ┣ app
- ┃ ┣ gate
- ┃ ┃ ┗ page.tsx
- ┃ ┣ login
- ┃ ┃ ┗ page.tsx
- ┃ ┣ signup
- ┃ ┃ ┗ page.tsx
- ┃ ┣ profile
- ┃ ┃ ┗ page.tsx
- ┃ ┣ project
- ┃ ┃ ┗ page.tsx
- ┃ ┣ history
- ┃ ┃ ┗ page.tsx
- ┃ ┣ mountain
- ┃ ┃ ┗ page.tsx
- ┃ ┣ todo
- ┃ ┃ ┗ page.tsx
- ┃ ┣ layout.tsx
- ┃ ┣ page.tsx
- ┃ ┗ globals.css
- ┣ components
- ┃ ┣ common
- ┃ ┃ ┣ Header
- ┃ ┃ ┃ ┣ Header.tsx
- ┃ ┃ ┃ ┗ Header.module.css
- ┃ ┃ ┣ Footer
- ┃ ┃ ┃ ┣ Footer.tsx
- ┃ ┃ ┃ ┗ Footer.module.css
- ┃ ┃ ┗ Modal
- ┃ ┃ ┃ ┣ TilModal.tsx
- ┃ ┃ ┃ ┗ TilModal.module.css
- ┃ ┣ mountain
- ┃ ┃ ┣ MapComponent.tsx
- ┃ ┃ ┣ MapComponent.module.css
- ┃ ┃ ┣ MountainModal.tsx
- ┃ ┃ ┗ MountainModal.module.css
- ┃ ┗ three
- ┃ ┃ ┣ Character.tsx
- ┃ ┃ ┣ Ground.tsx
- ┃ ┃ ┗ Player.tsx
- ┣ features
- ┃ ┣ gate
- ┃ ┃ ┣ Gate.tsx
- ┃ ┃ ┗ Gate.module.css
- ┃ ┣ home
- ┃ ┃ ┣ Home.tsx
- ┃ ┃ ┗ Home.module.css
- ┃ ┣ login
- ┃ ┃ ┣ Login.tsx
- ┃ ┃ ┗ Login.module.css
- ┃ ┣ signup
- ┃ ┃ ┣ Signup.tsx
- ┃ ┃ ┗ Signup.module.css
- ┃ ┣ todo
- ┃ ┃ ┣ Todo.tsx
- ┃ ┃ ┗ Todo.module.css
- ┃ ┗ mountain
- ┃ ┃ ┣ Mountain.tsx
- ┃ ┃ ┗ Mountain.module.css
- ┣ styles
- ┃ ┣ tokens.css
- ┃ ┣ reset.css
- ┃ ┗ utilities.css
- ┣ lib
- ┃ ┗ api.ts
- ┣ constants
- ┃ ┗ routes.ts
- ┗ types
+```
+📦app
+ ┣ 📂home
+ ┃ ┣ 📜Home.module.css
+ ┃ ┗ 📜page.tsx
+ ┣ 📂src
+ ┃ ┣ 📂components
+ ┃ ┃ ┗ 📂common
+ ┃ ┃ ┃ ┣ 📂CommonBtn
+ ┃ ┃ ┃ ┃ ┣ 📜CommonBtn.module.css
+ ┃ ┃ ┃ ┃ ┗ 📜CommonBtn.tsx
+ ┃ ┃ ┃ ┣ 📂Footer
+ ┃ ┃ ┃ ┃ ┣ 📜Footer.module.css
+ ┃ ┃ ┃ ┃ ┗ 📜Footer.tsx
+ ┃ ┃ ┃ ┣ 📂Header
+ ┃ ┃ ┃ ┃ ┣ 📜Header.module.css
+ ┃ ┃ ┃ ┃ ┗ 📜Header.tsx
+ ┃ ┃ ┃ ┣ 📂Loading
+ ┃ ┃ ┃ ┃ ┣ 📜Loading.module.css
+ ┃ ┃ ┃ ┃ ┗ 📜Loading.tsx
+ ┃ ┃ ┃ ┣ 📂Modal
+ ┃ ┃ ┃ ┃ ┣ 📜Modal.module.css
+ ┃ ┃ ┃ ┃ ┗ 📜Modal.tsx
+ ┃ ┃ ┃ ┗ 📂Stars
+ ┃ ┃ ┃ ┃ ┣ 📜Stars.module.css
+ ┃ ┃ ┃ ┃ ┗ 📜Stars.tsx
+ ┃ ┣ 📂feature
+ ┃ ┃ ┗ 📂Gate
+ ┃ ┃ ┃ ┣ 📜Gate.module.css
+ ┃ ┃ ┃ ┗ 📜Gate.tsx
+ ┃ ┗ 📂styles
+ ┃ ┃ ┣ 📜globals.css
+ ┃ ┃ ┣ 📜reset.css
+ ┃ ┃ ┣ 📜tokens.css
+ ┃ ┃ ┗ 📜utilities.css
+ ┣ 📜favicon.ico
+ ┣ 📜layout.tsx
+ ┗ 📜page.tsx
+```
 
 ### 디렉토리 세부 설명
 app        → URL 페이지 담당
