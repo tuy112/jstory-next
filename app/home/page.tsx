@@ -1,92 +1,145 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 
 import Header from "../src/components/common/Header/Header";
 import Footer from "../src/components/common/Footer/Footer";
-
 import Stars from "../src/components/common/Stars/Stars";
+import CommonModal from '../src/components/common/Modal/Modal';
 
 import styles from "./Home.module.css";
 
 export default function HomePage() {
+
+    // 1. 하트 날리기 기능
+    const [particles, setParticles] = useState<
+        {
+            id: number;
+            x: number;
+            y: number;
+            delay: number;
+        }[]
+    >([]);
+
+    const handleHeartEffect = () => {
+        const newParticles = Array.from(
+            { length: 8 },
+            (_, index) => ({
+                id: Date.now() + index,
+                x: Math.random() * 60 - 30,
+                y: Math.random() * 20,
+                delay: Math.random() * 0.5,
+            })
+        );
+
+        setParticles((prev) => [
+            ...prev,
+            ...newParticles,
+        ]);
+
+        setTimeout(() => {
+            setParticles((prev) =>
+                prev.filter(
+                    (particle) =>
+                        !newParticles.some(
+                            (newParticle) =>
+                                newParticle.id ===
+                                particle.id
+                        )
+                )
+            );
+        }, 2200);
+    };
+
+    // 2. 모달창 띄우기
+    const [open, setOpen] = useState(false);
+
+    const handlePreparePage = (
+        e: React.MouseEvent<HTMLAnchorElement>
+    ) => {
+        e.preventDefault();
+
+        setOpen(true);
+    };
+
     return (
         <div id="wrap">
-            <Stars count={100} />
+            <Stars count={120} />
 
             <Header />
 
-            <main
-                id="container"
-                className={styles.main}
-            >
-                <section
-                    className={styles["main-wrap"]}
-                >
-                    <h2>
-                        저만의 힐링공간에 오신
-                        모든 분들을 환영합니다
-                        ^_^
-                    </h2>
+            <main className={styles.main}>
+            <section className={styles.hero}>
+                <span className={styles.badge}>
+                    Jay's Healing Space
+                </span>
 
-                    <div
-                        className={
-                            styles["main-intro"]
-                        }
+                <h2>
+                    Jay의 힐링 공간에 오신
+                    <br />
+                    모든 분들을 환영합니다 :&#41;
+                </h2>
+                <p>천천히 성장하며, 늘 새로운 것을 배우고자 하는 Jay입니다..!</p>
+
+                <div className={styles.buttonWrap}>
+                    <button
+                        onClick={handleHeartEffect}
+                        className={styles.heroButton}
                     >
-                        <div
-                            className={`${styles["main-detail"]} ${styles.detail1}`}
-                        >
-                            <h3>About Me</h3>
+                        하트 발사하기 💙
+                    </button>
 
-                            <p>
-                                안녕하세요!
-                                Developer Jay입니다.
-                            </p>
-
-                            <p>
-                                새로운 도전과 배움을
-                                즐기는 개발자입니다.
-                            </p>
-
-                            <Link
-                                href="/profile"
-                                className={
-                                    styles[
-                                        "cta-button"
-                                    ]
-                                }
-                            >
-                                PROFILE로 바로가기
-                            </Link>
-                        </div>
-
-                        <div
-                            className={`${styles["main-detail"]} ${styles.detail2}`}
-                        >
-                            <h3>
-                                다이어트 기록방
-                            </h3>
-
-                            <p>
-                                식단 및 다이어트 기록이
-                                담긴 공간입니다.
-                            </p>
-
-                            <Link
-                                href="/diet"
-                                className={
-                                    styles[
-                                        "cta-button"
-                                    ]
-                                }
-                            >
-                                다이어트 기록 보러가기
-                            </Link>
-                        </div>
+                    <div className={styles.particleArea}>
+                        {particles.map((particle) => (
+                            <span
+                                key={particle.id}
+                                className={styles.particle}
+                                style={{
+                                    left: `${particle.x}px`,
+                                    bottom: `${particle.y}px`,
+                                    animationDelay: `${particle.delay}s`,
+                                }}
+                            />
+                        ))}
                     </div>
+                </div>
+            </section>
+
+                <section className={styles.gridSection}>
+                    <Link
+                        href="/profile"
+                        className={styles.card}
+                        onClick={handlePreparePage}
+                    >
+                        <span className={styles.cardLabel}>ABOUTME</span>
+                        <h3>Profile</h3>
+                        <p>Developer Jay를 소개합니다.</p>
+                    </Link>
+
+                    <Link
+                        href="/diet"
+                        className={styles.card}
+                        onClick={handlePreparePage}
+                    >
+                        <span className={styles.cardLabel}>RECORD</span>
+                        <h3>Project</h3>
+                        <p>Jay의 프로젝트 경력 기록공간</p>
+                    </Link>
+                </section>
+
+                <section className={styles.bottomMessage}>
+                    <p>시련이 온다해도, 쓰러지지말고 이겨내서 발전하자</p>
                 </section>
             </main>
+
+            <CommonModal
+                open={open}
+                onClose={() => setOpen(false)}
+                title="안내"
+                message={`아직 미구현 페이지입니다. 
+                    빠른 시일 내 화면 개발 완료하겠습니다 :)`}
+            />
 
             <Footer />
         </div>
