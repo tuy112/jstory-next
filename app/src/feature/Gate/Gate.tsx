@@ -52,7 +52,7 @@ export default function Gate() {
                 />
 
                 <p className={styles.gateText}>
-                    JSTORY Next Project [3rd 고도화]
+                    JSTORY Next.js [3rd 고도화 프로젝트]
                 </p>
 
                 <Link href="/home" className={styles.gateLink}>
