@@ -12,10 +12,11 @@
 
 .modalInfo {
     display: flex;
-    gap: 20px;
+    gap: 10px;
     margin-bottom: 40px;
     font-size: 14px;
     color: #8c8c8c;
+    justify-content: flex-end;
 }
 
 .modalBody {
@@ -47,4 +48,9 @@
 
 .editButton:hover {
     opacity: 0.9;
+}
+
+/* 페이지 */
+.paginationWrap {
+    margin-top: 60px;
 }

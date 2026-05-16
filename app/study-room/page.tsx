@@ -55,6 +55,13 @@ export default function StudyPage() {
         currentPage * pageSize
     );
 
+    // 날짜 포맷
+    const formatDate = (date: string) => {
+        const [year, month, day] = date.split('-');
+
+        return `${year}-${month.padStart(2, '0')}-${day.padStart(2, '0')}`;
+    };
+
     return (
         <>
             <DetailPageLayout
@@ -93,7 +100,10 @@ export default function StudyPage() {
                             align: 'center',
                         },
                     ]}
-                    data={pagedData}
+                    data={pagedData.map((item) => ({
+                        ...item,
+                        createdAt: formatDate(item.createdAt),
+                    }))}
                     onRowClick={(row) =>
                         handleRowClick(
                             row as StudyBoardItem
@@ -101,16 +111,18 @@ export default function StudyPage() {
                     }
                 />
 
-                <BoardPagination
-                    currentPage={currentPage}
-                    totalPage={totalPage}
-                    onChangePage={(page) => {
-                        setCurrentPage(page);
-                    }}
-                />
+                <div className={styles.paginationWrap}>
+                    <BoardPagination
+                        currentPage={currentPage}
+                        totalPage={totalPage}
+                        onChangePage={(page) => {
+                            setCurrentPage(page);
+                        }}
+                    />
+                </div>
             </DetailPageLayout>
 
-            {/* 상세 모달 */}
+            {/* 모달 */}
             <CommonModal
                 open={isOpen}
                 onClose={() => setIsOpen(false)}
@@ -121,8 +133,8 @@ export default function StudyPage() {
                     <div className={styles.modalContent}>
 
                         <div className={styles.modalInfo}>
-                            <span>ID : {selectedItem.id}</span>
-                            <span>과목 :{selectedItem.subject}</span>
+                            <span>ID : {selectedItem.id},</span>
+                            <span>과목 :{selectedItem.subject},</span>
                             <span>작성일 :{selectedItem.createdAt}</span>
                         </div>
 
