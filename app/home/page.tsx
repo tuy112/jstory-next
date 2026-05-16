@@ -110,7 +110,6 @@ export default function HomePage() {
                     <Link
                         href="/profile"
                         className={styles.card}
-                        onClick={handlePreparePage}
                     >
                         <span className={styles.cardLabel}>ABOUTME</span>
                         <h3>Profile</h3>
@@ -118,7 +117,7 @@ export default function HomePage() {
                     </Link>
 
                     <Link
-                        href="/diet"
+                        href="/project"
                         className={styles.card}
                         onClick={handlePreparePage}
                     >
