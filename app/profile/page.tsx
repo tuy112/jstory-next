@@ -9,14 +9,14 @@ import DetailPageLayout from '../src/components/layout/DetailPageLayout';
 import profileImage from '../../public/images/about_man.png';
 
 const capabilityList = [
-    'Linux Server Development',
-    'Java (Spring)',
-    'JavaScript (React.js)',
+    'Java (Spring Boot)',
     'TypeScript (Next.js)',
-    'HTML / CSS / Publishing',
+    'JavaScript (React.js)',
     'Oracle / MySQL',
-    'WebSquare5',
-    'UX Research / UI Prototyping',
+    'REST API Development',
+    'Linux Server Development',
+    'eGovFramework',
+    'SI Project Maintenance',
 ];
 
 const timelineData = [
@@ -24,14 +24,17 @@ const timelineData = [
         year: '2026',
         items: [
             {
+                type: 'personal',
                 title: 'Jstory 3단계 고도화 프로젝트(Next.js)',
                 period: '2026-04 ~ ing',
             },
             {
-                title: '(주)소프트케이 자체 홈페이지 제작 및 운영',
+                type: 'company',
+                title: '(주)소프트케이 회사 홈페이지 제작 및 운영',
                 period: '2026-02 ~ ing',
             },
             {
+                type: 'company',
                 title: '기록관리시스템 구축 및 유지보수 개발',
                 period: '2025-02 ~ ing',
             },
@@ -41,10 +44,12 @@ const timelineData = [
         year: '2025',
         items: [
             {
-                title: 'Mikep 전자결재 문서 이관 사업',
+                type: 'company',
+                title: '공공 H사 전자결재 데이터(문서) 이관 사업',
                 period: '2025-02 ~ 2025-10',
             },
             {
+                type: 'company',
                 title: '의료기기 플랫폼 프로토타입 제작',
                 period: '2024-12 ~ 2025-01',
             },
@@ -54,10 +59,12 @@ const timelineData = [
         year: '2024',
         items: [
             {
+                type: 'personal',
                 title: 'Jstory 고도화 프로젝트(React.js)',
                 period: '2024-08 ~ 2025-08',
             },
             {
+                type: 'company',
                 title: 'LG U+ 관리자 페이지 현대화 프로젝트',
                 period: '2024-06 ~ 2024-09',
             },
@@ -67,10 +74,12 @@ const timelineData = [
         year: '2023',
         items: [
             {
+                type: 'company',
                 title: '공공 L사 고도화 프로젝트',
                 period: '2023-10 ~ 2024-02',
             },
             {
+                type: 'education',
                 title: '스파르타코딩클럽 Node.js 백엔드 과정',
                 period: '2023-05 ~ 2023-09',
             },
@@ -80,20 +89,24 @@ const timelineData = [
         year: '2020 ~ 2022',
         items: [
             {
+                type: 'company',
                 title: '금융권 S사 통합단말 차세대 프로젝트',
                 period: '2022-02 ~ 2022-10',
             },
             {
+                type: 'personal',
                 title: 'Jstory 첫 구축 작업 (HTML/CSS/JS)',
                 period: '2022-01 ~ 2022-12',
             },
             {
+                type: 'education',
                 title: '이젠아카데미 UI/UX 퍼블리셔 양성과정',
-                period: '2021-07 ~ 2022-01', 
+                period: '2021-07 ~ 2022-01',
             },
             {
+                type: 'education',
                 title: '강남대학교 Java 웹 개발자 양성과정(K-move)',
-                period: '2020-12 ~ 2021-06', 
+                period: '2020-12 ~ 2021-06',
             },
         ],
     },
@@ -157,6 +170,23 @@ export default function ProfilePage() {
                     Career Timeline
                 </h3>
 
+                <div className={styles.timelineLegend}>
+                    <div className={styles.legendItem}>
+                        <span className={`${styles.legendDot} ${styles.companyDot}`} />
+                        업체 프로젝트
+                    </div>
+
+                    <div className={styles.legendItem}>
+                        <span className={`${styles.legendDot} ${styles.personalDot}`} />
+                        개인 프로젝트
+                    </div>
+
+                    <div className={styles.legendItem}>
+                        <span className={`${styles.legendDot} ${styles.educationDot}`} />
+                        교육 / 수료
+                    </div>
+                </div>
+
                 <div className={styles.timelineWrap}>
                     {timelineData.map((timeline) => (
                         <div
@@ -171,7 +201,9 @@ export default function ProfilePage() {
                                 {timeline.items.map((item) => (
                                     <div
                                         key={item.title}
-                                        className={styles.timelineCard}
+                                        className={`${styles.timelineCard} ${
+                                            styles[item.type]
+                                        }`}
                                     >
                                         <h4>
                                             {item.title}

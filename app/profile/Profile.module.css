@@ -13,6 +13,8 @@
     width: 280px;
     height: auto;
     border-radius: 24px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 10px 30px rgba(15,23,42,0.08);
 }
 
 .profileContent {
@@ -26,7 +28,7 @@
     padding: 0 16px;
     border-radius: 999px;
     background: rgba(59,130,246,0.12);
-    color: #93c5fd;
+    color: #2563eb;
     font-size: 13px;
     font-weight: 700;
 }
@@ -69,11 +71,53 @@
     min-height: 90px;
     padding: 20px;
     border-radius: 18px;
-    background: #111827;
-    border: 1px solid #1e293b;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 12px rgba(15,23,42,0.04);
     text-align: center;
     font-size: 15px;
-    color: #e2e8f0;
+    font-weight: 500;
+    color: #334155;
+    transition: 0.25s;
+}
+
+.capabilityCard:hover {
+    transform: translateY(-3px);
+    border-color: #93c5fd;
+    box-shadow: 0 12px 24px rgba(59,130,246,0.12);
+}
+
+.timelineLegend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    margin-bottom: 32px;
+}
+
+.legendItem {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    color: #475569;
+}
+
+.legendDot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.companyDot {
+    background: #3b82f6;
+}
+
+.personalDot {
+    background: #a855f7;
+}
+
+.educationDot {
+    background: #10b981;
 }
 
 .timelineWrap {
@@ -88,7 +132,7 @@
     left: 10px;
     width: 2px;
     height: 100%;
-    background: #334155;
+    background: #cbd5e1;
 }
 
 .timelineGroup {
@@ -100,7 +144,7 @@
     margin-bottom: 18px;
     font-size: 24px;
     font-weight: 700;
-    color: #93c5fd;
+    color: #2563eb;
 }
 
 .timelineItems {
@@ -113,8 +157,13 @@
     position: relative;
     padding: 20px;
     border-radius: 18px;
-    background: #111827;
-    border: 1px solid #1e293b;
+    border: 1px solid;
+    transition: 0.25s;
+    backdrop-filter: blur(12px);
+}
+
+.timelineCard:hover {
+    transform: translateY(-3px);
 }
 
 .timelineCard::before {
@@ -125,18 +174,80 @@
     width: 14px;
     height: 14px;
     border-radius: 50%;
-    background: #60a5fa;
 }
 
 .timelineCard h4 {
     font-size: 17px;
-    color: #f8fafc;
+    line-height: 1.5;
+    color: #111827;
 }
 
 .timelineCard p {
     margin-top: 8px;
     font-size: 14px;
-    color: #94a3b8;
+    color: #64748b;
+}
+
+/* 업체 프로젝트 */
+.timelineCard.company {
+    background: linear-gradient(
+        135deg,
+        #dbeafe,
+        #bfdbfe
+    );
+
+    border: 2px solid #3b82f6;
+}
+
+.timelineCard.company::before {
+    background: #2563eb;
+
+    box-shadow:
+        0 0 0 8px rgba(37,99,235,0.18),
+        0 0 18px rgba(37,99,235,0.45);
+}
+
+/* 개인 프로젝트 */
+.timelineCard.personal {
+    background: linear-gradient(
+        135deg,
+        #581c87,
+        #7e22ce
+    );
+
+    border: 2px solid #c084fc;
+}
+
+.timelineCard.personal h4 {
+    color: #ffffff;
+}
+
+.timelineCard.personal p {
+    color: rgba(255,255,255,0.78);
+}
+
+.timelineCard.personal::before {
+    background: #c084fc;
+
+    box-shadow:
+        0 0 0 8px rgba(192,132,252,0.22),
+        0 0 18px rgba(192,132,252,0.5);
+}
+
+/* 교육 */
+.timelineCard.education {
+    background: linear-gradient(
+        135deg,
+        #dcfce7,
+        #bbf7d0
+    );
+
+    border: 2px solid #4ade80;
+}
+
+.timelineCard.education::before {
+    background: #16a34a;
+    box-shadow: 0 0 0 6px rgba(22,163,74,0.15);
 }
 
 @media (max-width: 1024px) {
@@ -160,6 +271,10 @@
         font-size: 32px;
     }
 
+    .description {
+        font-size: 16px;
+    }
+
     .capabilityGrid {
         grid-template-columns: 1fr;
     }
@@ -168,11 +283,23 @@
         font-size: 24px;
     }
 
+    .timelineLegend {
+        gap: 12px;
+    }
+
     .timelineWrap {
         padding-left: 24px;
     }
 
+    .timelineCard {
+        padding: 18px;
+    }
+
     .timelineCard::before {
         left: -21px;
+    }
+
+    .timelineCard h4 {
+        font-size: 15px;
     }
 }
