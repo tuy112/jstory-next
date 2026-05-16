@@ -6,13 +6,12 @@ import Link from "next/link";
 import Header from "../src/components/common/Header/Header";
 import Footer from "../src/components/common/Footer/Footer";
 import Stars from "../src/components/common/Stars/Stars";
-import CommonModal from '../src/components/common/Modal/Modal';
 
 import styles from "./Home.module.css";
 
 export default function HomePage() {
 
-    // 1. 하트 날리기 기능
+    // 하트 날리기 기능
     const [particles, setParticles] = useState<
         {
             id: number;
@@ -52,17 +51,6 @@ export default function HomePage() {
         }, 2200);
     };
 
-    // 2. 모달창 띄우기
-    const [open, setOpen] = useState(false);
-
-    const handlePreparePage = (
-        e: React.MouseEvent<HTMLAnchorElement>
-    ) => {
-        e.preventDefault();
-
-        setOpen(true);
-    };
-
     return (
         <div id="wrap">
             <Stars count={120} />
@@ -72,7 +60,7 @@ export default function HomePage() {
             <main className={styles.main}>
             <section className={styles.hero}>
                 <span className={styles.badge}>
-                    Jay's Healing Space
+                    WELCOME TO JAY'S SPACE
                 </span>
 
                 <h2>
@@ -119,7 +107,6 @@ export default function HomePage() {
                     <Link
                         href="/project"
                         className={styles.card}
-                        onClick={handlePreparePage}
                     >
                         <span className={styles.cardLabel}>RECORD</span>
                         <h3>Project</h3>
@@ -131,14 +118,6 @@ export default function HomePage() {
                     <p>시련이 온다해도, 쓰러지지말고 이겨내서 발전하자</p>
                 </section>
             </main>
-
-            <CommonModal
-                open={open}
-                onClose={() => setOpen(false)}
-                title="안내"
-                message={`아직 미구현 페이지입니다. 
-                    빠른 시일 내 화면 개발 완료하겠습니다 :)`}
-            />
 
             <Footer />
         </div>

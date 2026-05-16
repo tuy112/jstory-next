@@ -110,10 +110,10 @@ export default function Header({
                                 <Link href="/home">Home</Link>
                             </li>
                             <li>
-                                <Link href="/profile" onClick={handlePreparePage}>About Me</Link>
+                                <Link href="/profile">About Me</Link>
                             </li>
                             <li>
-                                <Link href="/project" onClick={handlePreparePage}>Project</Link>
+                                <Link href="/project">Project</Link>
                             </li>
                             <li>
                                 <Link
