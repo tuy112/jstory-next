@@ -20,12 +20,12 @@ export const softwareDesignData: StudyBoardItem[] = [
         content: `
 소프트웨어 생명주기(SDLC)
 - 폭포수 모델
-요구사항 분석 > 설계 > 구현 > 테스트 > 유지보수
+요구사항 분석 -> 설계 -> 구현 -> 테스트 -> 유지보수
 ==========================================
 그 외 모델 : 
-프로토타입 모델
-나선형 모델
-애자일 모델
+- 프로토타입 모델
+- 나선형 모델
+- 애자일 모델
         `,
     },
 
@@ -102,7 +102,15 @@ export const softwareDesignData: StudyBoardItem[] = [
         subject: '소프트웨어 설계',
         createdAt: getTodayDate(),
         content: `
-현행 시스템 분석 절차입니다.
+현행 시스템 분석 :
+구-구성 파악
+기-기능 파악
+인-인터페이스 파악
+아-아키텍처 파악
+소-소프트웨어 구성 파악
+하-하드웨어 구성 파악
+네-네트워크 구성 파악
+"구기인아소하네"
         `,
     },
 
@@ -130,7 +138,12 @@ UML 구성
         subject: '소프트웨어 설계',
         createdAt: getTodayDate(),
         content: `
-유스케이스 다이어그램 : 사용자 입장에서 기능 표현
+유스케이스 다이어그램 : 
+사용자 입장에서 기능 표현
+
+포함(include)
+확장(extend)
+일반화(generalization)
         `,
     },
 
@@ -140,7 +153,10 @@ UML 구성
         subject: '소프트웨어 설계',
         createdAt: getTodayDate(),
         content: `
-클래스 다이어그램 : 객체 구조와 관계 표현
+클래스 다이어그램 : 
+객체 구조와 관계 표현
+
+클래스 구성요소 : 클래스명, 속성, 메서드
         `,
     },
 
@@ -150,17 +166,24 @@ UML 구성
         subject: '소프트웨어 설계',
         createdAt: getTodayDate(),
         content: `
-시퀀스 다이어그램 : 시간 순서대로 메시지 흐름
+시퀀스 다이어그램 : 
+시간 순서대로 메시지 흐름
+
+객체(Object)
+생명선(Lifeline)
+실행(Activation)
+메시지(Message)
         `,
     },
 
     {
         id: 11,
-        title: '요구사항 정의',
+        title: '설계 기법',
         subject: '소프트웨어 설계',
         createdAt: getTodayDate(),
         content: `
-요구사항 정의 내용입니다.
+- 하향식 설계기법 : 큰 것 -> 
+- 상향식 설계기법
         `,
     },
 
@@ -196,11 +219,11 @@ UML 구성
 
     {
         id: 15,
-        title: 'UI 설계 원칙',
+        title: '소프트웨어 설계 원칙',
         subject: '소프트웨어 설계',
         createdAt: getTodayDate(),
         content: `
-UI 설계 원칙입니다.
+
         `,
     },
 

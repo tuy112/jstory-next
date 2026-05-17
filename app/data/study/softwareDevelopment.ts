@@ -1,3 +1,5 @@
+// 정보처리기사
+// 2과목 : 소프트웨어 개발
 import { StudyBoardItem } from './types/StudyBoardItem';
 
 const getTodayDate = () => {
