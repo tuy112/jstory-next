@@ -33,7 +33,14 @@
     font-size: 17px;
     line-height: 1.7;
     color: #4b5563;
-    white-space: pre-line;
+    white-space: pre-line; 
+}
+
+.content {
+    margin-top: 24px;
+    border: 1px solid #e5e7eb;
+    padding: 16px;
+    border-radius: 12px;
 }
 
 .closeButton {
