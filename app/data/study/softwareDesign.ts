@@ -2,14 +2,7 @@
 // 1과목 : 소프트웨어 설계
 // 소프트웨어 설계 / 개발 / 구축 / 프로그래밍 언어 활용 / 정보시스템 구축 관리
 import { StudyBoardItem } from './types/StudyBoardItem';
-
-const getTodayDate = () => {
-    return new Intl.DateTimeFormat('ko-KR')
-        .format(new Date())
-        .replace(/\./g, '-')
-        .replace(/\s/g, '')
-        .slice(0, -1);
-};
+import { getTodayDate } from '../utils/getTodayDate';
 
 export const softwareDesignData: StudyBoardItem[] = [
     {
