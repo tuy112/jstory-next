@@ -1,9 +1,13 @@
 'use client';
 
 import styles from './style.module.css';
-import { BoardProps } from './types';
+import { BoardProps, RowData } from './types';
 
-export default function Board({ columns, data, onRowClick }: BoardProps) {
+export default function Board<T extends RowData>({
+    columns,
+    data,
+    onRowClick,
+}: BoardProps<T>) {
     return (
         <div className={styles.boardWrap}>
             <table className={styles.boardTable}>
