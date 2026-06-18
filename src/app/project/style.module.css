@@ -1,0 +1,143 @@
+.projectHero {
+    margin-bottom: 32px;
+}
+
+.badge {
+    display: inline-flex;
+    align-items: center;
+    height: 32px;
+    padding: 0 14px;
+    border-radius: 999px;
+    background: rgba(59,130,246,0.12);
+    color: #2563eb;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.title {
+    margin-top: 16px;
+    font-size: 45px;
+    line-height: 1.2;
+    color: #111;
+}
+
+.description {
+    font-size: 15px;
+    line-height: 1.7;
+    color: #475569;
+}
+
+.projectGrid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 15px;
+    margin-top: 40px;
+}
+
+/* 카드 */
+.projectCard {
+    padding: 30px;
+    border-radius: 20px;
+    background: linear-gradient(
+        135deg,
+        #ffffff,
+        #f8fafc
+    );
+    border: 1px solid #dbeafe;
+    box-shadow: 0 4px 10px rgba(15,23,42,0.05);
+    transition: 0.25s;
+}
+
+.projectCard:hover {
+    transform: translateY(-4px);
+    border-color: #60a5fa;
+    box-shadow: 0 12px 24px rgba(59,130,246,0.12);
+}
+
+.cardTop {
+    margin-bottom: 14px;
+}
+
+.cardTop h3 {
+    font-size: 18px;
+    line-height: 1.45;
+    color: #0f172a;
+}
+
+.cardTop span {
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 700;
+    color: #2563eb;
+}
+
+.projectCard ul {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding-left: 18px;
+}
+
+.projectCard li {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #475569;
+}
+
+/* 컬러 포인트 */
+.projectCard:nth-child(1) {
+    border-top: 4px solid #3b82f6;
+}
+
+.projectCard:nth-child(2) {
+    border-top: 4px solid #8b5cf6;
+}
+
+.projectCard:nth-child(3) {
+    border-top: 4px solid #06b6d4;
+}
+
+.projectCard:nth-child(4) {
+    border-top: 4px solid #10b981;
+}
+
+.projectCard:nth-child(5) {
+    border-top: 4px solid #f59e0b;
+}
+
+/* 태블릿 */
+@media (max-width: 1024px) {
+    .projectGrid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* 모바일 */
+@media (max-width: 768px) {
+    .projectHero {
+        text-align: center;
+    }
+    
+    .title {
+        font-size: 34px;
+        text-align: center;
+    }
+
+    .projectGrid {
+        grid-template-columns: 1fr;
+        margin-top: 0;
+    }
+
+    .projectCard {
+        padding: 20px;
+    }
+
+    .cardTop h3 {
+        font-size: 17px;
+    }
+
+    .projectCard li {
+        font-size: 13px;
+    }
+}
