@@ -3,7 +3,7 @@ export * from './types/StudyBoardItem';
 import { StudyBoardItem } from './types/StudyBoardItem';
 
 import { softwareDesignData } from './softwareDesign';
-import { softwareDevelopmentData } from './softwareDevelopment';
+// import { softwareDevelopmentData } from './softwareDevelopment';
 import { databaseData } from './database';
 import { programmingLanguageData } from './programmingLanguage';
 
@@ -12,7 +12,7 @@ type StudyBoardWithoutId =
 
 const rawStudyBoardData: StudyBoardWithoutId[] = [
     ...softwareDesignData,
-    ...softwareDevelopmentData,
+    // ...softwareDevelopmentData,
     ...databaseData,
     ...programmingLanguageData,
 ];
