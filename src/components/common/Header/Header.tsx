@@ -50,15 +50,13 @@ export default function Header({
 
     return (
         <>
-            <header
-                className={
+            <header className={ 
                     variant === 'detail'
-                        ? `${styles.header} ${styles.detailHeader}`
-                        : styles.header
+                    ? `${styles.header} ${styles.detailHeader}`
+                    : styles.header
                 }
             >
                 <div className={styles.inner}>
-
                     {/* Header - Title */}
                     <div className={styles.headerTitle}>
                         <h1 className={styles.headerLogo}>
@@ -67,10 +65,7 @@ export default function Header({
                                 className={styles.siteMaintitle}>
                                     Jstory
                             </Link>
-
-                            <span className={styles.siteSubtitle}>
-                                {" "} - Jay's Healing Space
-                            </span>
+                            <span className={styles.siteSubtitle}>{" "} - Jay's Healing Space</span>
                         </h1>
                     </div>
 
@@ -170,20 +165,17 @@ export default function Header({
                                         className={styles.mobileProjectIcon}
                                     />
                                 </div>
-
                                 <div className={styles.subButtons}>
                                     <Link href="/study-room" className={styles.subButton}>정보처리기사 공부방</Link>
-                                    <Link href="http://192.168.0.36:8088/softkPrototype.jsp#/" className={styles.subButton}>소프트케이 홈페이지 구축현장 (임시배포)</Link>
+                                    <Link href="/record-room" className={styles.subButton}>가계부 및 운동기록방</Link>
+                                    <Link href="/rms" className={styles.subButton}>기록관리시스템 로그분석정리</Link>
                                     <Link href="/mountain" className={styles.subButton} onClick={handlePreparePage}>산행기록방 (미구현)</Link>
                                     <Link href="/three" className={styles.subButton} onClick={handlePreparePage}>3D공간 (미구현)</Link>
-                                    <Link href="/book" className={styles.subButton} onClick={handlePreparePage}>
-                                        '끌림의 코드 : 지배의 법칙' 책 읽기 (미구현)
-                                    </Link>
+                                    <Link href="/book" className={styles.subButton} onClick={handlePreparePage}>'끌림의 코드 : 지배의 법칙' 책 읽기 (미구현)</Link>
                                 </div>
                             </div>
                         </div>
                     </div>
-
                 </div>
             </header>
 
