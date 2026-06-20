@@ -1,5 +1,5 @@
 export type EntryType = 'income' | 'fixed' | 'saving';
-export type CardType = 'credit' | 'check';
+export type CardType = 'credit' | 'cash';
 
 export interface Entry {
     id: string;
@@ -35,7 +35,7 @@ export const TYPE_LABELS: Record<EntryType, string> = {
 
 export const CARD_LABELS: Record<CardType, string> = {
     credit: '신용카드',
-    check: '체크카드',
+    cash: '체크카드',
 };
 
 // 유틸 
