@@ -2,8 +2,8 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 
-import Stars from "../components/common/Stars/Stars";
-import Loading from "../components/common/Loading/Loading";
+import Stars from "@/components/common/Stars/Stars";
+import Loading from "@/components/common/Loading/Loading";
 
 import styles from "./page.module.css";
 
@@ -19,12 +19,10 @@ export default function Gate() {
             setProgress((prev) => {
                 if (prev >= 100) {
                     clearInterval(interval);
-
                     setIsLoading(false);
 
                     return 100;
                 }
-
                 return prev + 2;
             });
         }, 100);
