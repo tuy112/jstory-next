@@ -1,9 +1,6 @@
 import type { Metadata } from "next";
 
-import "../styles/globals.css";
-import "../styles/reset.css";
-import "../styles/tokens.css";
-import "../styles/utilities.css";
+import "./globals.css";
 
 export const metadata: Metadata = {
     title: "Jstory",
