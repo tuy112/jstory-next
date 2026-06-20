@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import Link from "next/link";
 
 import Header from "../../components/common/Header/Header";
@@ -10,7 +10,8 @@ import Stars from "../../components/common/Stars/Stars";
 import styles from "./style.module.css";
 
 export default function HomePage() {
-
+    
+    const particleIdRef = useRef(0);
     // 하트 날리기 기능
     const [particles, setParticles] = useState<
         {
@@ -25,7 +26,7 @@ export default function HomePage() {
         const newParticles = Array.from(
             { length: 8 },
             (_, index) => ({
-                id: Date.now() + index,
+                id: particleIdRef.current++,
                 x: Math.random() * 60 - 30,
                 y: Math.random() * 20,
                 delay: Math.random() * 0.5,
