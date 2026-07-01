@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-import { EntryType, MONTHS, TYPE_LABELS, CARD_LABELS, fmt } from './types';
+import { EntryType, MONTHS, TYPE_LABELS, CARD_LABELS, fmt } from './data/types';
 import { MOCK_DATA } from './data/MockData'
 // import AddEntryModal from './AddEntryModal';
 // import EditAssetModal from './EditAssetModal';
