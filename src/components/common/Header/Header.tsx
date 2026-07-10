@@ -169,8 +169,10 @@ export default function Header({
                                     <Link href="/study-room" className={styles.subButton}>정보처리기사 공부방</Link>
                                     <Link href="/record-room" className={styles.subButton}>가계부 및 운동기록방</Link>
                                     <Link href="/rms" className={styles.subButton}>기록관리시스템 로그분석정리</Link>
+                                    <Link href="https://jay-world.vercel.app/" className={styles.subButton} target="_blank" rel="noopener noreferrer">
+                                        3D공간(Jay World)
+                                    </Link>
                                     <Link href="/mountain" className={styles.subButton} onClick={handlePreparePage}>산행기록방 (미구현)</Link>
-                                    <Link href="/three" className={styles.subButton} onClick={handlePreparePage}>3D공간 (미구현)</Link>
                                     <Link href="/book" className={styles.subButton} onClick={handlePreparePage}>'끌림의 코드 : 지배의 법칙' 책 읽기 (미구현)</Link>
                                 </div>
                             </div>
