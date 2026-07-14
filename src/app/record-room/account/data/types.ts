@@ -1,3 +1,4 @@
+// ===== 타입 =====
 export type EntryType = 'income' | 'fixed' | 'saving';
 export type CardType = 'credit' | 'cash';
 
@@ -6,6 +7,7 @@ export interface Entry {
     type: EntryType;
     label: string;
     amount: number;
+    cardType?: CardType;
 }
 
 export interface DailyExpense {
@@ -17,14 +19,16 @@ export interface DailyExpense {
 
 export interface MonthData {
     totalAsset: number;
+    budget: number; // 이번 달 지출 목표액
+    budgetStartDate?: string; // 이 날짜부터 지출 리셋 챌린지 시작
     entries: Entry[];
     dailyExpenses: DailyExpense[];
 }
 
-// 상수 
+// ===== 상수 =====
 export const MONTHS = [
-    '1월','2월','3월','4월','5월','6월',
-    '7월','8월','9월','10월','11월','12월',
+    '1월', '2월', '3월', '4월', '5월', '6월',
+    '7월', '8월', '9월', '10월', '11월', '12월',
 ];
 
 export const TYPE_LABELS: Record<EntryType, string> = {

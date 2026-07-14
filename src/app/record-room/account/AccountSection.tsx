@@ -24,15 +24,52 @@ export default function AccountSection() {
       else setMonth(m => m + 1);
     };
  
+    //=======================================================
     // 집계
     const income  = current?.entries.filter(e => e.type === 'income').reduce((s, e)  => s + e.amount, 0) ?? 0;
     const fixed   = current?.entries.filter(e => e.type === 'fixed').reduce((s, e)   => s + e.amount, 0) ?? 0;
     const saving = current?.entries.filter(e => e.type === 'saving').reduce((s, e) => s + e.amount, 0) ?? 0;
-    const creditExpense  = current?.dailyExpenses.filter(e => e.cardType === 'credit').reduce((s, e) => s + e.amount, 0) ?? 0;
-    const cashExpense   = current?.dailyExpenses.filter(e => e.cardType === 'cash').reduce((s, e)  => s + e.amount, 0) ?? 0;
     
-    const totalExpense  = creditExpense + cashExpense;
-    const balance =  income - (fixed + saving + creditExpense + cashExpense);
+    // 고정지출 중 카드별 금액
+    const fixedCreditExpense = current?.entries
+    .filter(e => e.type === 'fixed' && e.cardType === 'credit')
+    .reduce((s, e) => s + e.amount, 0) ?? 0;
+    const fixedCashExpense = current?.entries
+    .filter(e => e.type === 'fixed' && e.cardType === 'cash')
+    .reduce((s, e) => s + e.amount, 0) ?? 0;
+    
+    // 일별 지출 카드별 금액
+    const dailyCreditExpense = current?.dailyExpenses.filter(e => e.cardType === 'credit').reduce((s, e) => s + e.amount, 0) ?? 0;
+    const dailyCashExpense   = current?.dailyExpenses.filter(e => e.cardType === 'cash').reduce((s, e)  => s + e.amount, 0) ?? 0;
+    
+    // 신용카드 / 체크카드 지출 (일별 + 고정지출 통합)
+    const creditExpense = dailyCreditExpense + fixedCreditExpense;
+    const cashExpense   = dailyCashExpense + fixedCashExpense;
+
+    // 총 지출 (신용카드 + 체크카드 전체)
+    const totalExpense = creditExpense + cashExpense;
+
+    // 이번 달 순잔액
+    const netBalance = income - (saving + totalExpense);  
+
+    //=======================================================
+    
+    // 지출 목표 계산
+    const goal = current?.budget ?? 0;
+    const budgetStartDate = current?.budgetStartDate ?? null;
+
+    const spent = budgetStartDate
+      ? (current?.dailyExpenses.filter(e => e.date >= budgetStartDate).reduce((s, e) => s + e.amount, 0) ?? 0)
+      : totalExpense;
+      
+    const remaining = goal - spent;
+    const progressPct = goal > 0 ? Math.min((spent / goal) * 100, 100) : 0;
+
+    // D-day: 조회 중인 달이 실제 이번 달일 때만 의미 있음 (매월 1일 리셋 기준)
+    const lastDay = new Date(year, month + 1, 0).getDate();
+    const today = new Date();
+    const isCurrentMonth = today.getFullYear() === year && today.getMonth() === month;
+    const daysLeft = isCurrentMonth ? Math.max(lastDay - today.getDate(), 0) : null;
 
     // 일별 지출 날짜순 그룹화
     const groupedDaily = current?.dailyExpenses.reduce<Record<string, typeof current.dailyExpenses>>((acc, e) => {
@@ -89,27 +126,65 @@ export default function AccountSection() {
 
             <div className={styles.summaryRow_3}>
               <div className={`${styles.summaryCard} ${styles.fixed}`}>
-                <span className={styles.summaryLabel}>고정지출</span>
+                <span className={styles.summaryLabel}>고정지출(신용+체크)</span>
                 <span className={styles.summaryValue}>-{fmt(fixed)}</span>
+              </div>
+              <div className={`${styles.summaryCard} ${styles.check}`}>
+                <span className={styles.summaryLabel}>신용카드 지출</span>
+                <span className={styles.summaryValue}>-{fmt(creditExpense)}</span>
+                <span className={styles.summaryLabel}>계좌이체+체크카드 지출</span>
+                <span className={styles.summaryValue}>-{fmt(cashExpense)}</span>
               </div>
               <div className={`${styles.summaryCard} ${styles.credit}`}>
                 <span className={styles.summaryLabel}>총 지출</span>
                 <span className={styles.summaryValue}>-{fmt(totalExpense)}</span>
               </div>
-              <div className={`${styles.summaryCard} ${styles.check}`}>
-                <span className={styles.summaryLabel}>신용카드 지출</span>
-                <span className={styles.summaryValue}>-{fmt(creditExpense)}</span>
-                <span className={styles.summaryLabel}>체크카드 지출</span>
-                <span className={styles.summaryValue}>-{fmt(cashExpense)}</span>
-              </div>
+            </div>
+
+            {/* 이번 달 순잔액 */}
+            <div className={styles.netBalanceRow}>
+              <span className={styles.netBalanceLabel}>이번 달 순잔액 [수입 - (저축 + 총지출)]</span>
+              <span className={`${styles.netBalanceValue} ${netBalance >= 0 ? styles.plus : styles.minus}`}>
+                {netBalance >= 0 ? '+' : ''}{fmt(netBalance)}
+              </span>
             </div>
   
-            {/* 이번 달 수지 */}
-            <div className={styles.balanceRow}>
-              <span className={styles.balanceLabel}>이번 달 수지 [수입 - (고정지출+지출+저축)]</span>
-              <span className={`${styles.balanceValue} ${balance >= 0 ? styles.plus : styles.minus}`}>
-                {balance >= 0 ? '+' : ''}{fmt(balance)}
-              </span>
+            {/* 지출 목표 카드 */}
+            <div className={styles.budgetCard}>
+              <div className={styles.budgetHeader}>
+                <span className={styles.budgetTitle}>목표 지출 액수 ({month + 1}월)</span>
+                <span className={styles.budgetGoal}>{fmt(goal)}</span>
+              </div>
+
+              <div className={styles.progressBarBg}>
+                <div
+                  className={styles.progressBarFill}
+                  style={{
+                    width: `${progressPct}%`,
+                    backgroundColor: remaining < 0 ? '#e74c3c' : '#4a90e2',
+                  }}
+                />
+              </div>
+
+              <div className={styles.budgetRow}>
+                {/* <span className={styles.budgetLabel}>현재 지출 중 (신용카드+체크카드)</span> */}
+                <span className={styles.budgetLabel}>현재 지출 중 (7월만 7/13일 이후)</span>
+                <span className={styles.budgetValue}>-{fmt(spent)}</span>
+              </div>
+
+              <div className={styles.budgetRow}>
+                <span className={styles.budgetLabel}>지출 남은 금액</span>
+                <span className={`${styles.budgetValue} ${remaining >= 0 ? styles.plus : styles.minus}`}>
+                  {remaining >= 0 ? '+' : ''}{fmt(remaining)}
+                </span>
+              </div>
+
+              {daysLeft !== null && (
+                <div className={styles.budgetRow}>
+                  <span className={styles.budgetLabel}>지출 리셋까지 남은 날</span>
+                  <span className={styles.ddayValue}>D-{daysLeft}</span>
+                </div>
+              )}
             </div>
   
             {/* 항목 리스트 - 수입 / 고정지출 / 저축 */}
