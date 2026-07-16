@@ -168,7 +168,7 @@ export default function Header({
                                 <div className={styles.subButtons}>
                                     <Link href="/study-room" className={styles.subButton}>정보처리기사 공부방</Link>
                                     <Link href="/coding-club" className={styles.subButton}>코딩지식GET</Link>
-                                    <Link href="/record-room" className={styles.subButton}>가계부 및 운동기록방</Link>
+                                    <Link href="https://jay-record-room-eight.vercel.app/" className={styles.subButton}>가계부 및 운동기록방</Link>
                                     <Link href="https://jay-world.vercel.app/" className={styles.subButton} target="_blank" rel="noopener noreferrer">
                                         3D공간(Jay World)
                                     </Link>
