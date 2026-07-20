@@ -136,9 +136,8 @@ export default function ProfilePage() {
                         기획, 디자인, 개발까지 모두 가능한
                         개발자를 목표로 성장하고 있습니다.
                         <br />
-                        React.js + Spring 기반 개발을 주력으로 하며,
-                        Next.js(TypeScript) 기반 프로젝트도
-                        진행 가능합니다.
+                        Next.js(TS) + React.js + Java 기반 개발을 주력으로 하며,
+                        다양한 SI / SM 프로젝트 경험이 있습니다.
                     </p>
                 </div>
             </section>
