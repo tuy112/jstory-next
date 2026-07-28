@@ -2,16 +2,12 @@ import { getTodayDate } from '../getTodayDate';
 
 export const programmingLanguageData = [
     {
-        title: '자바스크립트',  
+        title: 'TCP/IP',  
         subject: '프로그래밍 언어',
         createdAt: getTodayDate(),
         content: `
-자바스크립트(JavaScript)    
-- 웹 개발의 핵심 언어
-- 동적 타이핑
-- 객체 기반 
-- 이벤트 기반 프로그래밍
-- 다양한 프레임워크와 라이브러리 존재 (React, Angular, Vue 등)
+TCP/IP : 인터넷에 연결된 서로 다른 기종의 컴퓨터들이 데이터를 주고받을 수 있도록
+하는 표준 프로토콜
         `,
     },
     {
