@@ -1,14 +1,13 @@
 'use client';
 
-import { useState } from 'react';
-
+import { useState, useMemo } from 'react';
 import { studyBoardData, StudyBoardItem } from '../../lib/study';
-
 import DetailPageLayout from '../../components/layout/DetailPageLayout';
 import Board from '../../components/board/Board';
 import CommonModal from '../../components/common/Modal/Modal';
-
 import styles from './style.module.css';
+
+const PAGE_SIZE = 10;
 
 export default function StudyPage() {
 
@@ -17,6 +16,39 @@ export default function StudyPage() {
 
     const [isOpen, setIsOpen] = useState(false);
 
+    // 탭 분리
+    const subjects = useMemo(() => {
+        return Array.from(
+            new Set(studyBoardData.map((item) => item.subject))
+        );
+    }, []);
+
+    const [activeSubject, setActiveSubject] =
+        useState(subjects[0]);
+
+    const filteredData = useMemo(() => {
+        return studyBoardData.filter(
+            (item) => item.subject === activeSubject
+        );
+    }, [activeSubject]);
+
+    // 페이지 처리
+    const [page, setPage] = useState(1);
+    const totalPages = Math.max(
+        Math.ceil(filteredData.length / PAGE_SIZE), 1
+    );
+    const pagedData = filteredData.slice(
+        (page - 1) * PAGE_SIZE,
+        page * PAGE_SIZE
+    );
+
+    // 탭 클릭 이벤트
+    const handleTabClick = (subject: string) => {
+        setActiveSubject(subject);
+        setPage(1);
+    };
+
+    // 행 클릭 이벤트
     const handleRowClick = (
         item: StudyBoardItem
     ) => {
@@ -34,14 +66,29 @@ export default function StudyPage() {
         <>
             <DetailPageLayout
                 title="(임시) 정보처리기사 공부방"
-                description="5/24 정보처리기사 시험 준비방입니다."
+                description="8/15 정보처리기사 시험 준비방입니다."
             >
+                {/* 탭 분리 */}
+                <div className={styles.tabs}>
+                    {subjects.map((subject, index) => (
+                        <button
+                            key={subject}
+                            className={`${styles.tabButton} ${
+                                activeSubject === subject ? styles.tabButtonActive : ''
+                            }`}
+                            onClick={() => handleTabClick(subject)}
+                        >
+                            {`${index + 1}과목`}
+                        </button>
+                    ))}
+                </div>
+
                 <Board
                     columns={[
                         {
                             key: 'title',
                             label: '제목',
-                            width: '60%',
+                            width: '38%',
                         },
                         {
                             key: 'subject',
@@ -56,7 +103,7 @@ export default function StudyPage() {
                             align: 'center',
                         },
                     ]}
-                    data={studyBoardData.map((item) => ({
+                    data={pagedData.map((item) => ({
                         ...item,
                         createdAt: formatDate(item.createdAt),
                     }))}
@@ -66,6 +113,29 @@ export default function StudyPage() {
                         )
                     }
                 />
+
+                {/* 페이지네이션 */}
+                <div className={styles.pagination}>
+                    <button
+                        className={styles.pageButton}
+                        onClick={() => setPage((p) => Math.max(p - 1, 1))}
+                        disabled={page === 1}
+                    >
+                        이전
+                    </button>
+
+                    <span className={styles.pageInfo}>
+                        {page} / {totalPages}
+                    </span>
+
+                    <button
+                        className={styles.pageButton}
+                        onClick={() => setPage((p) => Math.min(p + 1, totalPages))}
+                        disabled={page === totalPages}
+                    >
+                        다음
+                    </button>
+                </div>
             </DetailPageLayout>
 
             <CommonModal
