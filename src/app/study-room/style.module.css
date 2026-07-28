@@ -1,7 +1,7 @@
 .studyModal {
-    max-width: 800px !important;
-    min-height: 700px;
-    padding: 40px;
+    max-width: 720px !important;
+    min-height: 640px;
+    padding: 32px 40px 40px;
 }
 
 .modalContent {
@@ -12,26 +12,33 @@
 
 .modalInfo {
     display: flex;
-    gap: 10px;
-    margin-bottom: 40px;
-    font-size: 14px;
+    gap: 16px;
+    margin-bottom: 20px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #eee;
+    font-size: 13px;
     color: #8c8c8c;
-    justify-content: flex-end;
+    justify-content: flex-start;
 }
 
 .modalBody {
     flex: 1;
     overflow-y: auto;
-    line-height: 1.8;
+    line-height: 2;
     font-size: 16px;
+    letter-spacing: -0.2px;
     color: #333;
     white-space: pre-wrap;
+    text-align: left;
+    background: #fafafa;
+    border-radius: 12px;
+    padding: 28px 32px;
 }
 
 .modalFooter {
     display: flex;
     justify-content: flex-end;
-    margin-top: 30px;
+    margin-top: 24px;
 }
 
 .editButton {
@@ -50,7 +57,68 @@
     opacity: 0.9;
 }
 
-/* 페이지 */
-.paginationWrap {
+/* 페이지네이션 */
+.pagination {
     margin-top: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+}
+
+.pageButton {
+    border: 1px solid #d9d9d9;
+    border-radius: 8px;
+    padding: 8px 16px;
+    background: #fff;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.pageButton:hover:not(:disabled) {
+    background: #f5f5f5;
+}
+
+.pageButton:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.pageInfo {
+    font-size: 14px;
+    color: #8c8c8c;
+}
+
+/* 탭 분리 */
+.tabs {
+    display: flex;
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    border-bottom: none;
+    border-radius: 12px 12px 0 0;
+    margin-bottom: 0;
+    padding: 0 8px;
+}
+
+.tabButton {
+    border: none;
+    background: none;
+    padding: 14px 24px;
+    font-size: 15px;
+    color: #8c8c8c;
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -1px;
+    transition: 0.2s;
+}
+
+.tabButton:hover {
+    color: #1e2b4f;
+}
+
+.tabButtonActive {
+    color: #1e2b4f;
+    font-weight: 700;
+    border-bottom: 2px solid #1e2b4f;
 }
