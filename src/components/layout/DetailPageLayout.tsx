@@ -1,6 +1,6 @@
 'use client';
 
-import styles from './DetailPageLayout.module.css';
+import styles from './style.module.css';
 
 import Header from '../common/Header/Header';
 import Footer from '../common/Footer/Footer';
