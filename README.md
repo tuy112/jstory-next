@@ -1,9 +1,10 @@
-# 📘 Jstory Project
+## Jstory 3rd Upgrade Project
 
-## AS-IS GitHub Repository
+#### AS-IS GitHub Repository
 
 🔗 https://github.com/tuy112/Jstory<br />
 🔗 https://github.com/tuy112/jstory-transformation-front
+
 
 ## AS-IS 배포 페이지
 
@@ -11,95 +12,110 @@
 
 ## TO-BE 배포 페이지
 
-🔗 (현재 미배포 상태)
+🔗 jstory-next.vercel.app
 
-- 최신 업데이트 날짜 :<br />
-- 최신 릴리즈 버전 :<br />
-- 예정 출시 버전 :
-
----
 
 ## Jstory 디렉토리 구조
 ```
-📦app
- ┣ 📂home
- ┃ ┣ 📜Home.module.css
- ┃ ┗ 📜page.tsx
- ┣ 📂src
- ┃ ┣ 📂components
- ┃ ┃ ┗ 📂common
- ┃ ┃ ┃ ┣ 📂CommonBtn
- ┃ ┃ ┃ ┃ ┣ 📜CommonBtn.module.css
- ┃ ┃ ┃ ┃ ┗ 📜CommonBtn.tsx
- ┃ ┃ ┃ ┣ 📂Footer6
- ┃ ┃ ┃ ┃ ┣ 📜Footer.module.css
- ┃ ┃ ┃ ┃ ┗ 📜Footer.tsx
- ┃ ┃ ┃ ┣ 📂Header
- ┃ ┃ ┃ ┃ ┣ 📜Header.module.css
- ┃ ┃ ┃ ┃ ┗ 📜Header.tsx
- ┃ ┃ ┃ ┣ 📂Loading
- ┃ ┃ ┃ ┃ ┣ 📜Loading.module.css
- ┃ ┃ ┃ ┃ ┗ 📜Loading.tsx
- ┃ ┃ ┃ ┣ 📂Modal
- ┃ ┃ ┃ ┃ ┣ 📜Modal.module.css
- ┃ ┃ ┃ ┃ ┗ 📜Modal.tsx
- ┃ ┃ ┃ ┗ 📂Stars
- ┃ ┃ ┃ ┃ ┣ 📜Stars.module.css
- ┃ ┃ ┃ ┃ ┗ 📜Stars.tsx
- ┃ ┣ 📂feature
- ┃ ┃ ┗ 📂Gate
- ┃ ┃ ┃ ┣ 📜Gate.module.css
- ┃ ┃ ┃ ┗ 📜Gate.tsx
- ┃ ┗ 📂styles
- ┃ ┃ ┣ 📜globals.css
- ┃ ┃ ┣ 📜reset.css
- ┃ ┃ ┣ 📜tokens.css
- ┃ ┃ ┗ 📜utilities.css
- ┣ 📜favicon.ico
- ┣ 📜layout.tsx
- ┗ 📜page.tsx
+src
+ ┣ app
+ ┃ ┣ coding-club
+ ┃ ┃ ┣ page.tsx
+ ┃ ┃ ┗ style.module.css
+ ┃ ┣ home
+ ┃ ┃ ┣ page.tsx
+ ┃ ┃ ┗ style.module.css
+ ┃ ┣ profile
+ ┃ ┃ ┣ page.tsx
+ ┃ ┃ ┗ style.module.css
+ ┃ ┣ project
+ ┃ ┃ ┣ page.tsx
+ ┃ ┃ ┗ style.module.css
+ ┃ ┣ study-room
+ ┃ ┃ ┣ page.tsx
+ ┃ ┃ ┗ style.module.css
+ ┃ ┣ favicon.ico
+ ┃ ┣ globals.css
+ ┃ ┣ layout.tsx
+ ┃ ┣ page.module.css
+ ┃ ┗ page.tsx
+ ┣ components
+ ┃ ┣ board
+ ┃ ┃ ┣ Board.tsx
+ ┃ ┃ ┣ style.module.css
+ ┃ ┃ ┗ types.ts
+ ┃ ┣ common
+ ┃ ┃ ┣ Footer
+ ┃ ┃ ┃ ┣ Footer.module.css
+ ┃ ┃ ┃ ┗ Footer.tsx
+ ┃ ┃ ┣ Header
+ ┃ ┃ ┃ ┣ Header.module.css
+ ┃ ┃ ┃ ┗ Header.tsx
+ ┃ ┃ ┣ Loading
+ ┃ ┃ ┃ ┣ Loading.module.css
+ ┃ ┃ ┃ ┗ Loading.tsx
+ ┃ ┃ ┣ Modal
+ ┃ ┃ ┃ ┣ Modal.module.css
+ ┃ ┃ ┃ ┗ Modal.tsx
+ ┃ ┃ ┗ Stars
+ ┃ ┃ ┃ ┣ Stars.module.css
+ ┃ ┃ ┃ ┗ Stars.tsx
+ ┃ ┗ layout
+ ┃ ┃ ┣ DetailPageLayout.tsx
+ ┃ ┃ ┗ style.module.css
+ ┣ hooks
+ ┗ lib
+ ┃ ┣ knowledge
+ ┃ ┃ ┣ types
+ ┃ ┃ ┃ ┗ knowledgeItem.ts
+ ┃ ┃ ┣ index.ts
+ ┃ ┃ ┗ posts.ts
+ ┃ ┣ study
+ ┃ ┃ ┣ types
+ ┃ ┃ ┃ ┗ StudyBoardItem.ts
+ ┃ ┃ ┣ database.ts
+ ┃ ┃ ┣ index.ts
+ ┃ ┃ ┣ informationSystem.ts
+ ┃ ┃ ┣ programmingLanguage.ts
+ ┃ ┃ ┣ softwareDesign.ts
+ ┃ ┃ ┗ softwareDevelopment.ts
+ ┃ ┗ getTodayDate.ts
 ```
 
-# 디렉토리 세부 설명
+## 디렉토리 세부 설명
 
 - `app`<br />
-  → URL 페이지 담당
-
-- `features`<br />
-  → 실제 화면 컴포넌트
+  → 페이지 라우팅 (URL 단위 페이지, 각 페이지별 스타일)
 
 - `components`<br />
   → 공통 / 재사용 컴포넌트
+  - `board` : 게시판형 UI 컴포넌트
+  - `common` : Header, Footer, Modal, Loading 등 전역 공통 컴포넌트
+  - `layout` : 상세 페이지 등 레이아웃 컴포넌트
 
-- `styles`<br />
-  → 전역 CSS, 변수, reset, utility 관리
+- `hooks`<br />
+  → 커스텀 훅
 
-- `public`<br />
-  → 이미지 및 정적 리소스 관리
+- `lib`<br />
+  → 데이터 및 타입 관리
+  - `knowledge`, `study` 등 도메인별 데이터(mock data)와 타입 정의
+  - 공통 유틸 함수 (예: `getTodayDate.ts`)
 
 ---
 
-# CSS 구성
+## CSS 구성
 
 - `globals.css`<br />
-  → reset.css + tokens.css + utilities.css import만 담당
-
-- `tokens.css`<br />
-  → 색상, 폰트, z-index, shadow, radius 등 공통 변수 정의
-
-- `reset.css`<br />
-  → 태그 초기화
-
-- `utilities.css`<br />
-  → hide, line, goTop 등 공통 유틸리티 클래스 관리
+  → 태그 초기화(reset) + 색상, 폰트, z-index, shadow, radius 등 공통 변수(tokens) + hide, line, goTop 등 공통 유틸리티 클래스를 한 파일에서 관리
 
 - `*.module.css`<br />
-  → Header, Footer, Gate 등 컴포넌트별 스타일 관리
+  → Header, Footer, Modal, Loading, Stars 등 컴포넌트별 스타일 관리<br />
+  → 각 페이지(`app` 하위)별 `style.module.css`로 페이지 전용 스타일 관리
 
 
 ---
 
-# 🛠 Tools 
+## 🛠 Tools 
 
 
 
