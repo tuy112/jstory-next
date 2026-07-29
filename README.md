@@ -12,7 +12,7 @@
 
 ## TO-BE 배포 페이지
 
-🔗 jstory-next.vercel.app
+🔗 [jstory-next.vercel.app](https://jstory-next.vercel.app/)
 
 
 ## Jstory 디렉토리 구조
