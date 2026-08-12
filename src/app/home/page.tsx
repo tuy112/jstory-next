@@ -61,15 +61,15 @@ export default function HomePage() {
 
             <main className={styles.main}>
                 <section className={styles.hero}>
-                    <h2>Jay's Dev Space</h2>
-                    <p>늘 새로운 걸 만드는 것을 추구하는 Jay입니다..!</p>
+                    <h2>Hi, I'm Jay :)</h2>
+                    <p>오늘도 하나씩 쌓아가는 Jay의 기록</p>
 
                     <div className={styles.buttonWrap}>
                         <button
                             onClick={handleHeartEffect}
                             className={styles.heroButton}
                         >
-                            좋아요 💙
+                            하트 날리기 💙
                         </button>
 
                         <div className={styles.particleArea}>
