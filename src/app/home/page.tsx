@@ -7,6 +7,7 @@ import Header from "../../components/common/Header/Header";
 import Footer from "../../components/common/Footer/Footer";
 import Stars from "../../components/common/Stars/Stars";
 
+import { devRecordData } from '@/lib/devRecord/devRecordData';
 import styles from "./style.module.css";
 
 export default function HomePage() {
@@ -60,15 +61,15 @@ export default function HomePage() {
 
             <main className={styles.main}>
                 <section className={styles.hero}>
-                    <h2>Welcome to Jay's World :&#41;</h2>
-                    <p>천천히 성장하며, 늘 새로운 것을 만들고자 하는 Jay입니다..!</p>
+                    <h2>Jay's Dev Space</h2>
+                    <p>늘 새로운 걸 만드는 것을 추구하는 Jay입니다..!</p>
 
                     <div className={styles.buttonWrap}>
                         <button
                             onClick={handleHeartEffect}
                             className={styles.heroButton}
                         >
-                            하트 발사하기 💙
+                            좋아요 💙
                         </button>
 
                         <div className={styles.particleArea}>
@@ -88,23 +89,28 @@ export default function HomePage() {
                 </section>
 
                 <section className={styles.gridSection}>
-                    <Link
-                        href="/profile"
-                        className={styles.card}
+                
+                    <a href="https://jay-record-room-eight.vercel.app/dev-record"
+                            className={styles.devRecordCard}
                     >
-                        <span className={styles.cardLabel}>ABOUTME</span>
-                        <h3>Profile</h3>
-                        <p>Developer Jay를 소개합니다.</p>
-                    </Link>
+                            <div className={styles.devRecordHeader}>
+                                <span className={styles.cardLabel}>RECORD</span>
+                                <h3>개발일지</h3>
+                                <p>오늘의 개발 및 공부한 내용을 기록하는 공간</p>
+                            </div> 
 
-                    <Link
-                        href="/project"
-                        className={styles.card}
-                    >
-                        <span className={styles.cardLabel}>RECORD</span>
-                        <h3>Project</h3>
-                        <p>Jay의 프로젝트 경력 기록공간</p>
-                    </Link>
+                            <ul className={styles.devRecordPreviewList}>
+                                {devRecordData.slice(0, 3).map((record) => (
+                                        <li key={record.id} className={styles.devRecordPreviewItem}>
+                                            <span className={styles.previewDate}>{record.date}</span>
+                                            <span className={styles.previewPage}>{record.page}</span>
+                                            <span className={styles.previewTitle}>{record.title}</span>
+                                        </li>
+                                ))}
+                            </ul>
+
+                            <span className={styles.devRecordMore}>클릭해서 전체보기 →</span>
+                    </a>
                 </section>
 
                 <section className={styles.bottomMessage}>
