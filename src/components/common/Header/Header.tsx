@@ -102,31 +102,13 @@ export default function Header({
 
                         <ul className={styles.menuSection}>
                             <li>
-                                <Link href="/home">Home</Link>
+                                <Link href="/">GATE로 이동</Link>
                             </li>
                             <li>
-                                <Link href="/profile">About Me</Link>
+                                <Link href="/profile">PROFILE(ABOUT ME)</Link>
                             </li>
                             <li>
-                                <Link href="/project">Project</Link>
-                            </li>
-                            <li>
-                                <Link
-                                    href="https://www.notion.so/jstoryjay/RMS-196211b2c60980a7baccd0751dd9a093"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                >
-                                    기록관리시스템 메모장
-                                </Link>
-                            </li>
-                            <li>
-                                <Link
-                                    href="https://tuy112.github.io"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                >
-                                    과거의 JSTORY (React)
-                                </Link>
+                                <Link href="/project">MY PROJECT</Link>
                             </li>
                         </ul>
 
@@ -135,17 +117,26 @@ export default function Header({
                             <li>
                                 <Link href="/guestbook" onClick={handlePreparePage}>방명록</Link>
                             </li>
-
                             <li>
                                 <Link href="/gallery" onClick={handlePreparePage}>갤러리</Link>
                             </li>
-
                             <li>
-                                <Link href="/music" onClick={handlePreparePage}>Music</Link>
+                                <Link
+                                        href="https://www.notion.so/jstoryjay/RMS-196211b2c60980a7baccd0751dd9a093"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
+                                        노션메모장
+                                </Link>
                             </li>
-
                             <li>
-                                <Link href="/setting" onClick={handlePreparePage}>설정</Link>
+                                <Link
+                                    href="https://tuy112.github.io"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    Jstory ASIS(웹)
+                                </Link>
                             </li>
                         </ul>
                     </div>
@@ -172,6 +163,7 @@ export default function Header({
                                     <Link href="https://jay-world.vercel.app/" className={styles.subButton} target="_blank" rel="noopener noreferrer">
                                         3D공간(Jay World)
                                     </Link>
+                                    <Link href="/home" className={styles.subButton} onClick={handlePreparePage}>Jay여행플랫폼</Link>
                                     <Link href="/mountain" className={styles.subButton} onClick={handlePreparePage}>산행기록방 (미구현)</Link>
                                     <Link href="/book" className={styles.subButton} onClick={handlePreparePage}>'끌림의 코드 : 지배의 법칙' 책 읽기 (미구현)</Link>
                                 </div>
