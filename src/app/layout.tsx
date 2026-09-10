@@ -1,20 +1,27 @@
 import type { Metadata } from "next";
-
+import { Jua } from "next/font/google";
 import "./globals.css";
 
+const jua = Jua({
+      subsets: ["latin"],
+      weight: "400",
+      variable: "--font-jua",
+      display: "swap",
+});
+
 export const metadata: Metadata = {
-    title: "Jstory",
-    description: "Jstory Next.js App",
+      title: "Jstory",
+      description: "Jstory Next.js App",
 };
 
 export default function RootLayout({
-    children,
+      children,
 }: Readonly<{
-    children: React.ReactNode;
+      children: React.ReactNode;
 }>) {
-    return (
-        <html lang="ko">
-            <body>{children}</body>
-        </html>
-    );
+      return (
+            <html lang="ko" className={jua.variable}>
+                  <body className={jua.className}>{children}</body>
+            </html>
+      );
 }
