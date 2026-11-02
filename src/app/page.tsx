@@ -8,11 +8,8 @@ import Loading from "@/components/common/Loading/Loading";
 import styles from "./page.module.css";
 
 export default function Gate() {
-      const [isLoading, setIsLoading] =
-            useState(true);
-
-      const [progress, setProgress] =
-            useState(0);
+      const [isLoading, setIsLoading] = useState(true);
+      const [progress, setProgress] = useState(0);
 
       useEffect(() => {
             const interval = setInterval(() => {
@@ -46,10 +43,10 @@ export default function Gate() {
                               alt="earth"
                               className={styles.gateLogo}
                         />
-                        <p className={styles.gateText}>JSTORY 3번째 이야기..!</p>
+                        <p className={styles.gateText}>JSTORY [Next.js(Typescript)]</p>
                         
                         <Link href="/home" className={styles.gateLink}>
-                              플랫폼 바로가기
+                              지구 안으로 들어가기!
                         </Link>
                   </header>
             </div>
