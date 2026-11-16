@@ -1,6 +1,6 @@
 import DetailPageLayout from '../../components/layout/DetailPageLayout';
 
-import styles from './style.module.css';
+import styles from './page.module.css';
 
 const projectList = [
     {
