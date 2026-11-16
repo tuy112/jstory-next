@@ -37,7 +37,6 @@ export default function Header({ variant = 'main', }: Props) {
 
       // 3. 모달창 띄우기
       const [open, setOpen] = useState(false);
-
       const handlePreparePage = (
             e: React.MouseEvent<HTMLAnchorElement>
       ) => {
@@ -106,7 +105,7 @@ export default function Header({ variant = 'main', }: Props) {
                                                 <Link href="/project">Project Lab (프로젝트 모음)</Link>
                                           </li>
                                           <li>
-                                                <Link href="/server-operation">Server Lab (서버 운영 현황)</Link>
+                                                <Link href="/server-operation" onClick={handlePreparePage}>Server Lab (서버 운영 현황)</Link>
                                           </li>
                                     </ul>
 
