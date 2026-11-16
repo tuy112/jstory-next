@@ -1,0 +1,81 @@
+.main {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: calc(100vh - 120px);
+    padding: 40px 24px 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+/* HERO */
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 40px;
+}
+
+.hero h2 {
+    color: #ffffff;
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+.hero p {
+    max-width: 620px;
+    margin-bottom: 20px;
+    color: rgba(255,255,255,0.72);
+    font-size: 14px;
+    line-height: 1.6;
+    word-break: keep-all;
+}
+
+/* 공중 섬 */
+.islandSection {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex: 1;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      min-height: 480px;
+      max-height: 650px;
+      margin: 0 auto;
+}
+
+.islandSection > div {
+      width: 100%;
+      height: 100%;
+      max-width: 900px;
+}
+
+@media (max-width: 768px) {
+      .islandSection {
+            min-height: 350px;
+            max-height: 450px;
+      }
+}
+
+
+
+/* BOTTOM */
+.bottomMessage {
+    margin-top: 24px;
+    text-align: center;
+}
+
+.bottomMessage p {
+    color: rgba(255,255,255,0.4);
+    font-size: 15px;
+    letter-spacing: 0.08em;
+}

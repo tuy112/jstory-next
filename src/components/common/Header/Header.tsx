@@ -3,9 +3,9 @@ import Link from "next/link";
 import Image from 'next/image';
 import { FolderOpen } from 'lucide-react';
 
-import styles from "./Header.module.css";
-
 import CommonModal from '../Modal/Modal';
+
+import styles from "./Header.module.css";
 
 interface Props {
     variant?: 'main' | 'detail';
@@ -85,57 +85,57 @@ export default function Header({ variant = 'main', }: Props) {
 
                                     {/* 메뉴 프로필 */}
                                     <div className={styles.hamburgerProfile}>
-                                    <Image
-                                    className={styles.profileImage}
-                                    src="/images/pika.png"
-                                    alt="profileImg"
-                                    width={100}
-                                    height={100}
-                                    />
-                                    <h2 className={styles.profileName}>JAY</h2>
-                                    <span className={styles.profileDescription}>
-                                          {displayText}
-                                    </span>
+                                          <Image
+                                                className={styles.profileImage}
+                                                src="/images/pika.png"
+                                                alt="profileImg"
+                                                width={100}
+                                                height={100}
+                                          />
+                                          <h2 className={styles.profileName}>JAY</h2>
+                                          <span className={styles.profileDescription}>
+                                                {displayText}
+                                          </span>
                                     </div>
 
                                     <ul className={styles.menuSection}>
-                                    <li>
-                                          <Link href="/">GATE로 이동</Link>
-                                    </li>
-                                    <li>
-                                          <Link href="/profile">PROFILE(ABOUT ME)</Link>
-                                    </li>
-                                    <li>
-                                          <Link href="/project">MY PROJECT</Link>
-                                    </li>
+                                          <li>
+                                                <Link href="/profile">PROFILE</Link>
+                                          </li>
+                                          <li>
+                                                <Link href="/project">Project Lab (프로젝트 모음)</Link>
+                                          </li>
+                                          <li>
+                                                <Link href="/server-operation">Server Lab (서버 운영 현황)</Link>
+                                          </li>
                                     </ul>
 
                                     {/* 작은 메뉴 영역 */}
                                     <ul className={styles.bottomMenu}>
-                                    <li>
-                                          <Link href="/guestbook" onClick={handlePreparePage}>방명록</Link>
-                                    </li>
-                                    <li>
-                                          <Link href="/gallery" onClick={handlePreparePage}>갤러리</Link>
-                                    </li>
-                                    <li>
-                                          <Link
-                                                href="https://www.notion.so/jstoryjay/RMS-196211b2c60980a7baccd0751dd9a093"
-                                                target="_blank"
-                                                rel="noopener noreferrer"
+                                          <li>
+                                                <Link href="/gate">대문으로 이동</Link>
+                                          </li>
+                                          <li>
+                                                <Link href="/gallery" onClick={handlePreparePage}>갤러리</Link>
+                                          </li>
+                                          <li>
+                                                <Link
+                                                      href="https://www.notion.so/jstoryjay/RMS-196211b2c60980a7baccd0751dd9a093"
+                                                      target="_blank"
+                                                      rel="noopener noreferrer"
+                                                      >
+                                                      노션메모장
+                                                </Link>
+                                          </li>
+                                          <li>
+                                                <Link
+                                                      href="https://tuy112.github.io"
+                                                      target="_blank"
+                                                      rel="noopener noreferrer"
                                                 >
-                                                노션메모장
-                                          </Link>
-                                    </li>
-                                    <li>
-                                          <Link
-                                                href="https://tuy112.github.io"
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                          >
-                                                Jstory ASIS(웹)
-                                          </Link>
-                                    </li>
+                                                      Jstory ASIS
+                                                </Link>
+                                          </li>
                                     </ul>
                               </div>
 
@@ -155,14 +155,11 @@ export default function Header({ variant = 'main', }: Props) {
                                                       />
                                                 </div>
                                                 <div className={styles.subButtons}>
-                                                      <Link href="https://jay-record-room-eight.vercel.app/" className={styles.subButton}>가계부 및 운동기록방</Link>
-                                                      
-                                                      <Link href="https://jay-world.vercel.app/" className={styles.subButton} target="_blank" rel="noopener noreferrer">
-                                                            GinkoStory(게임)
-                                                      </Link>
-                                                      <Link href="https://jay-travel-record-eqj8qzdpw-tuy112s-projects.vercel.app/" className={styles.subButton}>Jay여행플랫폼</Link>
-                                                      <Link href="/mountain" className={styles.subButton} onClick={handlePreparePage}>산행기록방 (미구현)</Link>
-                                                      <Link href="/book" className={styles.subButton} onClick={handlePreparePage}>'끌림의 코드 : 지배의 법칙' 책 읽기 (미구현)</Link>
+                                                      <Link href="http://192.168.0.37/" className={styles.subButton}>1. Jay Record Room (HTTP임시배포 중)</Link>
+                                                      <Link href="https://jay-travel-record-eqj8qzdpw-tuy112s-projects.vercel.app/" className={styles.subButton}>2. Jay 여행기록</Link>
+                                                      <Link href="" className={styles.subButton} onClick={handlePreparePage}>3. 산행기록방 (개발 중)</Link>
+                                                      <Link href="" className={styles.subButton} onClick={handlePreparePage}>'4. 나만의 AI 플랫폼 (개발 전)</Link>
+                                                      <Link href="" className={styles.subButton} onClick={handlePreparePage}>5. 나만의 게임 모음 (개발 전)</Link>
                                                 </div>
                                           </div>
                                     </div>

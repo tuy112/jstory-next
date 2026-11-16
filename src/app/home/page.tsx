@@ -1,57 +1,13 @@
 "use client";
 
-import { useState, useRef } from "react";
-import Link from "next/link";
-
 import Header from "../../components/common/Header/Header";
 import Footer from "../../components/common/Footer/Footer";
 import Stars from "../../components/common/Stars/Stars";
+import FloatingIsland from '@/components/common/FloatingIsland';
 
-import { devRecordData } from '@/lib/devRecord/devRecordData';
-import styles from "./style.module.css";
+import styles from "./page.module.css";
 
 export default function HomePage() {
-    
-      const particleIdRef = useRef(0);
-      // 하트 날리기 기능
-      const [particles, setParticles] = useState<
-            {
-                  id: number;
-                  x: number;
-                  y: number;
-                  delay: number;
-            }[]
-      >([]);
-
-      const handleHeartEffect = () => {
-            const newParticles = Array.from(
-                  { length: 8 },
-                  (_, index) => ({
-                  id: particleIdRef.current++,
-                  x: Math.random() * 60 - 30,
-                  y: Math.random() * 20,
-                  delay: Math.random() * 0.5,
-                  })
-            );
-
-            setParticles((prev) => [
-                  ...prev,
-                  ...newParticles,
-            ]);
-
-            setTimeout(() => {
-                  setParticles((prev) =>
-                  prev.filter(
-                        (particle) =>
-                              !newParticles.some(
-                              (newParticle) =>
-                                    newParticle.id ===
-                                    particle.id
-                              )
-                  )
-                  );
-            }, 2200);
-      };
 
       return (
             <div id="wrap">
@@ -61,55 +17,13 @@ export default function HomePage() {
 
                   <main className={styles.main}>
                         <section className={styles.hero}>
-                              <h2>저의 힐링공간에 오신 분들을 환영합니다!</h2>
-                              <p>오늘도 하나씩 쌓아가는 나의 기록</p>
-
-                              <div className={styles.buttonWrap}>
-                                    <button
-                                    onClick={handleHeartEffect}
-                                    className={styles.heroButton}
-                                    >
-                                    하트 날리기 💙
-                                    </button>
-
-                                    <div className={styles.particleArea}>
-                                    {particles.map((particle) => (
-                                          <span
-                                                key={particle.id}
-                                                className={styles.particle}
-                                                style={{
-                                                left: `${particle.x}px`,
-                                                bottom: `${particle.y}px`,
-                                                animationDelay: `${particle.delay}s`,
-                                                }}
-                                          />
-                                    ))}
-                                    </div>
-                              </div>
+                              <h2>저만 힐링공간에 오신 분들을 환영합니다!</h2>
+                              <p>오늘도 하나씩 쌓여가는 나의 기록</p>
                         </section>
 
-                        <section className={styles.gridSection}>
-                              <a href="https://jay-record-room-eight.vercel.app/dev-record"
-                                    className={styles.devRecordCard}
-                              >
-                                    <div className={styles.devRecordHeader}>
-                                          <span className={styles.cardLabel}>RECORD</span>
-                                          <h3>개발일지</h3>
-                                          <p>오늘의 개발 및 공부한 내용을 기록하는 공간</p>
-                                    </div> 
-
-                                    <ul className={styles.devRecordPreviewList}>
-                                          {devRecordData.slice(0, 3).map((record) => (
-                                                <li key={record.id} className={styles.devRecordPreviewItem}>
-                                                      <span className={styles.previewDate}>{record.date}</span>
-                                                      <span className={styles.previewPage}>{record.page}</span>
-                                                      <span className={styles.previewTitle}>{record.title}</span>
-                                                </li>
-                                          ))}
-                                    </ul>
-
-                                    <span className={styles.devRecordMore}>클릭해서 전체보기 →</span>
-                              </a>
+                        {/* 3D 공중의 섬 */}
+                        <section className={styles.islandSection}>
+                              <FloatingIsland />
                         </section>
 
                         <section className={styles.bottomMessage}>
