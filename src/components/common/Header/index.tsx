@@ -3,9 +3,9 @@ import Link from "next/link";
 import Image from 'next/image';
 import { FolderOpen } from 'lucide-react';
 
-import CommonModal from '../Modal/Modal';
+import CommonModal from '@/components/common/Modal';
 
-import styles from "./Header.module.css";
+import styles from "./style.module.css";
 
 interface Props {
     variant?: 'main' | 'detail';
@@ -154,9 +154,9 @@ export default function Header({ variant = 'main', }: Props) {
                                                       />
                                                 </div>
                                                 <div className={styles.subButtons}>
-                                                      <Link href="http://192.168.0.37/" className={styles.subButton}>1. Jay Record Room (HTTP임시배포 중)</Link>
+                                                      <Link href="http://192.168.0.37:3002/" className={styles.subButton}>1. Jay Record Room (HTTP배포 중)</Link>
                                                       <Link href="https://jay-travel-record-eqj8qzdpw-tuy112s-projects.vercel.app/" className={styles.subButton}>2. Jay 여행기록</Link>
-                                                      <Link href="" className={styles.subButton} onClick={handlePreparePage}>3. 산행기록방 (개발 중)</Link>
+                                                      <Link href="http://192.168.0.37:3003/" className={styles.subButton}>3. 산행기록방 (HTTP배포 중)</Link>
                                                       <Link href="" className={styles.subButton} onClick={handlePreparePage}>'4. 나만의 AI 플랫폼 (개발 전)</Link>
                                                       <Link href="" className={styles.subButton} onClick={handlePreparePage}>5. 나만의 게임 모음 (개발 전)</Link>
                                                 </div>

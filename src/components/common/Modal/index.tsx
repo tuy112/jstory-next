@@ -1,6 +1,6 @@
 'use client';
 
-import styles from './Modal.module.css';
+import styles from './style.module.css';
 
 interface CommonModalProps {
     open: boolean;

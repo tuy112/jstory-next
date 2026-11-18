@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from "react";
 
-import styles from "./Stars.module.css";
+import styles from "./style.module.css";
 
 interface StarsProps {
     count?: number;

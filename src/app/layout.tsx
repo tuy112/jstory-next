@@ -14,11 +14,7 @@ export const metadata: Metadata = {
       description: "Jstory Next.js App",
 };
 
-export default function RootLayout({
-      children,
-}: Readonly<{
-      children: React.ReactNode;
-}>) {
+export default function RootLayout({ children, }: Readonly<{ children: React.ReactNode; }>) {
       return (
             <html lang="ko" className={jua.variable}>
                   <body className={jua.className}>{children}</body>

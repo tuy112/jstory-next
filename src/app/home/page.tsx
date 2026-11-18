@@ -1,9 +1,9 @@
 "use client";
 
-import Header from "../../components/common/Header/Header";
-import Footer from "../../components/common/Footer/Footer";
-import Stars from "../../components/common/Stars/Stars";
-import FloatingIsland from '@/components/common/FloatingIsland';
+import Header from "../../components/common/Header";
+import Footer from "../../components/common/Footer";
+import Stars from "../../components/common/Stars";
+import FloatingIsland from '@/components/FloatingIsland';
 
 import styles from "./page.module.css";
 

@@ -2,8 +2,8 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 
-import Stars from "@/components/common/Stars/Stars";
-import Loading from "@/components/common/Loading/Loading";
+import Stars from "@/components/common/Stars";
+import Loading from "@/components/common/Loading";
 
 import styles from "./page.module.css";
 
@@ -46,7 +46,7 @@ export default function Gate() {
                         <p className={styles.gateText}>JSTORY [Next.js(Typescript)]</p>
                         
                         <Link href="/home" className={styles.gateLink}>
-                              지구 안으로 들어가기!
+                              안으로 들어가기!
                         </Link>
                   </header>
             </div>
