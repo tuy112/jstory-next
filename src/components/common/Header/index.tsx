@@ -112,7 +112,7 @@ export default function Header({ variant = 'main', }: Props) {
                                     {/* 작은 메뉴 영역 */}
                                     <ul className={styles.bottomMenu}>
                                           <li>
-                                                <Link href="/gate">대문으로 이동</Link>
+                                                <Link href="/">대문으로 이동</Link>
                                           </li>
                                           <li>
                                                 <Link href="/gallery" onClick={handlePreparePage}>갤러리</Link>
